@@ -66,6 +66,12 @@ public class Graph {
         return -1;
     }
 
+    public String getNameFromIndex(int n){
+
+        return perfecturesList.get(n);
+
+    }
+
     public void printPerfecturesList(){
         for(int i = 0; i < perfecturesList.size(); i++){
             System.out.println(i + " --> " + perfecturesList.get(i));

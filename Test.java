@@ -8,7 +8,9 @@ public class Test {
 
         g.printPerfecturesList();
 
-        System.out.println(d.getDistanceOfTwoPerfectures("Tokyo", "Tokyo"));
+        d.printRoutes("Tokyo");
+
+        // System.out.println(d.getDistanceOfTwoPerfectures("Tokyo", "Nara"));
         // System.out.println(Arrays.toString(d.getDistance(0)));
         // System.out.println(Arrays.toString(d.getDistance(30)));
         
