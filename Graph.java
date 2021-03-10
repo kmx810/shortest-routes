@@ -45,11 +45,21 @@ public class Graph {
         }
         s.close();
     }
-    
-    public boolean isIn(String text, ArrayList<String> array){
 
-        for(int i = 0; i < array.size(); i++){
-            if(text.equals(array.get(i))){
+    public boolean isIn(int n, ArrayList<Integer> list){
+
+        for(int i = 0; i < list.size(); i++){
+            if(n == list.get(i)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean isIn(String text, ArrayList<String> list){
+
+        for(int i = 0; i < list.size(); i++){
+            if(text.equals(list.get(i))){
                 return true;
             }
         }
@@ -63,7 +73,7 @@ public class Graph {
                 return i;
             }
         }
-        return -1;
+        throw new IllegalArgumentException("There is no such prefecture!");
     }
 
     public String getNameFromIndex(int n){

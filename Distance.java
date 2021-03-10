@@ -76,11 +76,22 @@ public class Distance {
 
     }
 
+    public ArrayList<Integer>[] getRoutes(int start){
+        getDistance(start);
+
+        return routes;
+
+    }
+
     public void printRoutes(int start){
         getDistance(start);
         
         for(int i = 0; i < routes.length; i++){
-            System.out.print(g.getNameFromIndex(start));
+            if(!routes[i].isEmpty()){
+                System.out.print(g.getNameFromIndex(start));
+            }else{
+                System.out.print("No route avaliable.");
+            }
             for(int j = 0; j < routes[i].size(); j++){
                 System.out.print(" --> " + g.getNameFromIndex(routes[i].get(j)));
             }
@@ -91,5 +102,23 @@ public class Distance {
     public void printRoutes(String start){
         printRoutes(g.checkOrderNumber(start));
     }
+
+    public void printRoute(int start, int end){
+        if(g.isIn(end, getRoutes(start)[end])){
+
+            System.out.print(g.getNameFromIndex(start));
+            for(int i = 0; i < getRoutes(start)[end].size(); i++){
+                System.out.print(" --> " + g.getNameFromIndex(getRoutes(start)[end].get(i)));
+            }
+        }else{
+            System.out.println("No route available.");
+        }
+        
+    }   
+    
+    public void printRoute(String start, String end){
+        printRoute(g.checkOrderNumber(start), g.checkOrderNumber(end));
+    }
+
 
 }
