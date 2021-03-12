@@ -17,10 +17,10 @@ public class Graph {
         while(s.hasNextLine()){
             parts = s.nextLine().split(" ");
 
-            if(!isIn(parts[0], perfecturesList)){
+            if(!perfecturesList.contains(parts[0])){
                 perfecturesList.add(parts[0]);
             }
-            if(!isIn(parts[1], perfecturesList)){
+            if(!perfecturesList.contains(parts[1])){
                 perfecturesList.add(parts[1]);
             }
         }
@@ -46,32 +46,10 @@ public class Graph {
         s.close();
     }
 
-    public boolean isIn(int n, ArrayList<Integer> list){
-
-        for(int i = 0; i < list.size(); i++){
-            if(n == list.get(i)){
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public boolean isIn(String text, ArrayList<String> list){
-
-        for(int i = 0; i < list.size(); i++){
-            if(text.equals(list.get(i))){
-                return true;
-            }
-        }
-        return false;
-
-    }
     public int checkOrderNumber(String text){
-        
-        for(int i = 0; i < perfecturesList.size(); i++){
-            if(text.equals(perfecturesList.get(i))){
-                return i;
-            }
+        int rv = perfecturesList.indexOf(text);
+        if(rv >= 0){
+            return rv;
         }
         throw new IllegalArgumentException("There is no such prefecture!");
     }

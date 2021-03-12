@@ -6,9 +6,9 @@ public class Test {
         Graph g = new Graph();
         Distance d = new Distance();
 
-        g.printPerfecturesList();
+        // g.printPerfecturesList();
 
-        d.printRoutes("Kochi");
+        d.printRoute("Tokyo","Fukushima");
 
         // System.out.println(d.getDistanceOfTwoPerfectures("Tokyo", "Nara"));
         // System.out.println(Arrays.toString(d.getDistance(0)));

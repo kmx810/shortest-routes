@@ -104,7 +104,7 @@ public class Distance {
     }
 
     public void printRoute(int start, int end){
-        if(g.isIn(end, getRoutes(start)[end])){
+        if(getRoutes(start)[end].contains(end)){
 
             System.out.print(g.getNameFromIndex(start));
             for(int i = 0; i < getRoutes(start)[end].size(); i++){
