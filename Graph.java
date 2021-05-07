@@ -10,7 +10,7 @@ public class Graph {
 
     public Graph() throws FileNotFoundException {
         
-        File f = new File("Perfectures.txt");
+        File f = new File("Neighbours.txt");
         Scanner s = new Scanner(f);
         String[] parts;
 
